@@ -28,15 +28,15 @@ namespace MovieRentalManagementSystem
 
                 switch (option) {
                     case 1:
-                        Console.WriteLine("Enter Movie MovieId in Integer");
-                        int MovieId = int.Parse(Console.ReadLine());
+                        //Console.WriteLine("Enter Movie MovieId in Integer");
+                        //int MovieId = int.Parse(Console.ReadLine());
                         Console.WriteLine("Enter Movie Title:");
                         string titel = Console.ReadLine();
                         Console.WriteLine("Enter Movie Director:");
                         string director = Console.ReadLine();
                         Console.WriteLine("Enter Movie rental price:");
                         string rentalprice = Console.ReadLine();
-                        movieManager.CreateMovie(MovieId,titel,director,rentalprice);   
+                        movieManager.CreateMovie(titel,director,rentalprice);   
 
                         break;
                     case 2:

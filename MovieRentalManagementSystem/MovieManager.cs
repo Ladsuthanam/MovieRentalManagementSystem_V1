@@ -13,7 +13,7 @@ namespace MovieRentalManagementSystem
        
         
 
-        public void CreateMovie(int movieId, string title, string directer, string rentalPrice)
+        public void CreateMovie(string title, string directer, string rentalPrice)
         {
             var movie = new Movie(AutoM_Id++,title,directer,rentalPrice);
             movies.Add(movie);
