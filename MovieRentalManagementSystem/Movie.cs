@@ -32,4 +32,28 @@ namespace MovieRentalManagementSystem
 
 
     }
+
+    public class DigitalMovie : Movie
+    {
+        private string FileSize;
+        private string Format;
+
+        public DigitalMovie(int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice) 
+        {
+
+        }
+    }
+
+    public class DVDMovie : Movie
+
+       
+    {
+
+        private decimal DiscWeight;
+        private string Duration;
+        public DVDMovie(int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice)
+        {
+
+        }
+    }
 }
