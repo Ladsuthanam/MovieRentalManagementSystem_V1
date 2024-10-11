@@ -11,6 +11,10 @@ namespace MovieRentalManagementSystem
         static void Main(string[] args)
         {
 
+            Movie movie =new Movie("MOVIE_001", "Titanic", "James Cameroon", "1.00 ");
+            Console.WriteLine(movie.ToString());
+
+            Console.ReadLine();
 
         }
     }
