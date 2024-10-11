@@ -42,7 +42,7 @@ namespace MovieRentalManagementSystem
             }
 
             movies.Remove(movie);
-            CreateMovie(movieId,title,directer,rentalPrice);
+            CreateMovie(title,directer,rentalPrice);
             Console.WriteLine("Movie updated successfully");
 
         }
