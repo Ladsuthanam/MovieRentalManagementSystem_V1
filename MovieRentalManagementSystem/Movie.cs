@@ -11,21 +11,24 @@ namespace MovieRentalManagementSystem
     public class Movie
     {
 
-        private string movieId {  get; set; }
-        private string title { get; set; }
-        private string directer {  get; set; }
-        private string rentalPrice { get; set; }
-
-
+        public string MovieId { get; private set; }
+        public string Title { get; private set; }
+        public string Directer { get; private set; }
+        public string RentalPrice { get; private set; }
+        
 
         public Movie(string movieId, string title, string directer, string rentalPrice)
         {
-            this.movieId = movieId;
-            this.title = title;
-            this.directer = directer;
-            this.rentalPrice = rentalPrice;
+            MovieId = movieId;
+            Title = title;
+            Directer = directer;
+            RentalPrice = rentalPrice;
         }
 
+        public override string ToString()
+        {
+            return $"movieIdId: {MovieId}, title: {Title}, director:{Directer}, rentalPrice: {RentalPrice}";
+        }
 
 
     }
