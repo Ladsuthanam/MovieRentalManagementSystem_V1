@@ -32,8 +32,17 @@ namespace MovieRentalManagementSystem
 
         }
 
-        public void UpdateMovie()
+        public void UpdateMovie(string movieId, string title, string directer, string rentalPrice)
         {
+            var movie = movies.Find(m => m.MovieId == movieId);
+            if (movie == null) {
+                Console.WriteLine("Not Fount Movie");
+                return;
+            }
+
+            movies.Remove(movie);
+            CreateMovie(movieId,title,directer,rentalPrice);
+            Console.WriteLine("Movie updated successfully");
 
         }
         public void DeleteMovie()
