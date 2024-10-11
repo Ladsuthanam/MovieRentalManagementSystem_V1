@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,19 +31,31 @@ namespace MovieRentalManagementSystem
             return $"movieIdId: {MovieId}, title: {Title}, director:{Directer}, rentalPrice: {RentalPrice}";
         }
 
+        
 
     }
 
     public class DigitalMovie : Movie
     {
-        private string FileSize;
-        private string Format;
+        public string FileSize { get; private set; }
+        public string Format { get; private set; }
 
-        public DigitalMovie(int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice) 
+        public DigitalMovie(string fileSize,string format,int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice) 
         {
 
+            FileSize = fileSize;
+            Format = format;
+
         }
+
+        public static string DisplayDigitalMovieInfo(DigitalMovie digitalMovie)
+        {
+            return $"FileSize : {digitalMovie.FileSize} mp, Format : {digitalMovie}";
+        }
+
     }
+
+   
 
     public class DVDMovie : Movie
 
@@ -50,10 +63,17 @@ namespace MovieRentalManagementSystem
     {
 
         private decimal DiscWeight;
-        private string Duration;
-        public DVDMovie(int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice)
-        {
 
+        private string Duration;
+        public DVDMovie(decimal discWeight,string duration,int movieId, string title, string directer, string rentalPrice) : base(movieId, title, directer, rentalPrice)
+        {
+            DiscWeight = discWeight;
+            Duration = duration;
+        }
+
+        public static string DisplayDVDMovieInfo(DVDMovie dvdMovie)
+        {
+            return $"DiscWeight : {dvdMovie.DiscWeight} gram , Dutation : {dvdMovie}";
         }
     }
 }

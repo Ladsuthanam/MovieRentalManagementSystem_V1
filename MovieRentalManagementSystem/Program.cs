@@ -10,7 +10,10 @@ namespace MovieRentalManagementSystem
     {
         static void Main(string[] args)
         {
-
+            DigitalMovie digitalMovie = new DigitalMovie("30k","mp4",1,"Tamil","vino","50.00");
+            DVDMovie dVDMovie = new DVDMovie(5,"2hours",1, "Tamil", "vino", "50.00");
+           
+           
             MovieManager movieManager = new MovieManager();
             int option;
             //Movie movie =new Movie("MOVIE_001", "Titanic", "James Cameroon", "1.00 ");
