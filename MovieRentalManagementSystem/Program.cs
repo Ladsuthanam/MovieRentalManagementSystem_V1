@@ -54,10 +54,24 @@ namespace MovieRentalManagementSystem
 
                         movieManager.UpdateMovie(UpdateId,newtitel,newdirector,newrentalprice);
                         break;
-                    
+                    case 4:
 
+                        Console.WriteLine("Enter MovieId To Delete");
+                        int DeleteId = int.Parse(Console.ReadLine());
+                        movieManager.DeleteMovie(DeleteId);
+                        break;
+
+                    case 5:
+                        Console.WriteLine("You Extit...!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Please Enter Valid Option! Try Again");
+                        break;
 
                 }
+
+                Console.WriteLine();
 
 
             } while (option !=5);
