@@ -9,12 +9,13 @@ namespace MovieRentalManagementSystem
     internal class MovieManager
     {
         private List<Movie> movies = new List<Movie>();
-        private string AutoM_Id = "MOVIE_001";
+        private int AutoM_Id = 1;
+       
         
 
-        public void CreateMovie(string movieId, string title, string directer, string rentalPrice)
+        public void CreateMovie(int movieId, string title, string directer, string rentalPrice)
         {
-            var movie = new Movie(AutoM_Id,title,directer,rentalPrice);
+            var movie = new Movie(AutoM_Id++,title,directer,rentalPrice);
             movies.Add(movie);
             Console.WriteLine("Movie added successfully");
 
@@ -32,7 +33,7 @@ namespace MovieRentalManagementSystem
 
         }
 
-        public void UpdateMovie(string movieId, string title, string directer, string rentalPrice)
+        public void UpdateMovie(int movieId, string title, string directer, string rentalPrice)
         {
             var movie = movies.Find(m => m.MovieId == movieId);
             if (movie == null) {
@@ -45,7 +46,7 @@ namespace MovieRentalManagementSystem
             Console.WriteLine("Movie updated successfully");
 
         }
-        public void DeleteMovie(string movieId)
+        public void DeleteMovie(int movieId)
         {
             var movie = movies.Find(m => m.MovieId == movieId);
             if (movie == null) {

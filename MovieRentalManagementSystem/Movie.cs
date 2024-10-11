@@ -11,13 +11,13 @@ namespace MovieRentalManagementSystem
     public class Movie
     {
 
-        public string MovieId { get; private set; }
+        public int MovieId { get; private set; }
         public string Title { get; private set; }
         public string Directer { get; private set; }
         public string RentalPrice { get; private set; }
         
 
-        public Movie(string movieId, string title, string directer, string rentalPrice)
+        public Movie(int movieId, string title, string directer, string rentalPrice)
         {
             MovieId = movieId;
             Title = title;
