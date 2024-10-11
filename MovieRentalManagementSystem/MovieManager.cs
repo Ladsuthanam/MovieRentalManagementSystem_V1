@@ -22,7 +22,7 @@ namespace MovieRentalManagementSystem
         public void ReadMovies()
         {
             if (movies == null) {
-                Console.WriteLine("Not Fount Movies");
+                Console.WriteLine("Not Found Movies");
                 return;
             }
             foreach (var movie in movies) {
@@ -36,7 +36,7 @@ namespace MovieRentalManagementSystem
         {
             var movie = movies.Find(m => m.MovieId == movieId);
             if (movie == null) {
-                Console.WriteLine("Not Fount Movie");
+                Console.WriteLine("Not Found Movie");
                 return;
             }
 
@@ -45,8 +45,18 @@ namespace MovieRentalManagementSystem
             Console.WriteLine("Movie updated successfully");
 
         }
-        public void DeleteMovie()
+        public void DeleteMovie(string movieId)
         {
+            var movie = movies.Find(m => m.MovieId == movieId);
+            if (movie == null) {
+                Console.WriteLine("Not Found Movie");
+                return;
+            }
+
+            movies.Remove(movie);
+            Console.WriteLine("Movie deleted successfully.");
+
+
 
         }
     }
