@@ -53,6 +53,7 @@ namespace MovieRentalManagementSystem
                         string newrentalprice = Console.ReadLine();
 
                         movieManager.UpdateMovie(UpdateId,newtitel,newdirector,newrentalprice);
+                       
                         break;
                     case 4:
 

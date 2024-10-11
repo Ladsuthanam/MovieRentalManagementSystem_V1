@@ -35,6 +35,7 @@ namespace MovieRentalManagementSystem
 
         public void UpdateMovie(int movieId, string title, string directer, string rentalPrice)
         {
+
             var movie = movies.Find(m => m.MovieId == movieId);
             if (movie == null) {
                 Console.WriteLine("Not Found Movie");
@@ -42,7 +43,7 @@ namespace MovieRentalManagementSystem
             }
 
             movies.Remove(movie);
-            CreateMovie(title,directer,rentalPrice);
+            CreateMovie(title, directer, rentalPrice);
             Console.WriteLine("Movie updated successfully");
 
         }
